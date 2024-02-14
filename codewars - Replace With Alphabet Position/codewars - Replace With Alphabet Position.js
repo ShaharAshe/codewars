@@ -1,7 +1,6 @@
 function alphabetPosition(text) {
     const a_ascii = "a".charCodeAt();
     const z_ascii = "z".charCodeAt();
-    const space_ascii = " ".charCodeAt();
     return text.toLowerCase().split("").map(word => (word.charCodeAt() >= a_ascii && word.charCodeAt() <= z_ascii)? word.charCodeAt()-a_ascii+1 : "").filter(Boolean).join(" ");
 }
 
