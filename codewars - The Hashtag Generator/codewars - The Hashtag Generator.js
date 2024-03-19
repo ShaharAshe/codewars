@@ -5,9 +5,9 @@ function generateHashtag (str) {
     let re_str = `#`
     str.trim().split(" ").forEach(element => {
         if(element.trim().length > 0) {
-        re_str += element[0].toUpperCase();
-        if(element.trim().length > 1)
-            re_str += element.slice(1);
+            re_str += element[0].toUpperCase();
+            if(element.trim().length > 1)
+                re_str += element.slice(1);
     }});
     if(re_str.trim().length > 140)
         return false;
