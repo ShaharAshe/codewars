@@ -1,19 +1,41 @@
 <div>
-    <h3>Description:</h3>
     <div>
-        <p>The <a href="https://www.youtube.com/watch?v=KSEyIXnknoY" target="_blank">Visitor Design Pattern</a> can be used, for example, to determine how an attack deals a different amount of damage to a unit in the StarCraft game.</p>
-        <p>The pattern consists of delegating the responsibility to a different class.</p>
-        <p>When a unit takes damage it can tell the visitor what to do with itself.</p>
+        <h3>Description:</h3>
+        <div>
+            <p>The <a href="https://www.youtube.com/watch?v=hvpXKZhNINc" target="_blank">Adapter Design Pattern</a> can be used, for example in the StarCraft game, to insert an external character in the game.</p>
+            <p>The pattern consists in having a wrapper class that will adapt the code from the external source.</p>
+        </div>
         <h2>Your Task</h2>
-        <p>Complete the code so that when a <code>Tank</code> attacks a <code>Marine</code> it takes <code>21</code> damage and when a <code>Tank</code> attacks a <code>Marauder</code> it takes <code>32</code> damage.</p>
-        <p>The Marine's initial health should be set to <code>100</code> and the Marauder's health should be set to <code>125</code>.</p>
-        <p>You have 3 classes:</p>
-        <ul>
-            <li>
-                <code>Marine</code>: has a <code>health</code> property and <code>accept(visitor)</code> method</li>
-            <li>
-                <code>Marauder</code>: has a <code>health</code> property and <code>accept(visitor)</code> method</li>
-            <li><code>TankBullet</code>: the visitor class. Has <code>visitLight(unit)</code> and <code>visitArmored(unit)</code> methods</li>
-        </ul>
+        <div>
+            <p>The adapter receives an instance of the object that it is going to adapt and handles it in a way that works with our application.</p>
+            <p>In this example we have the pre-loaded classes:</p>
+        <pre><code><span>class</span> <span>Marine</span> {
+  <span>attack</span>(<span>target</span>) {
+    <span>target</span>.<span>health</span> <span>-=</span> <span>6</span>;
+  }
+}
+
+<span>class</span> <span>Zealot</span> {
+  <span>attack</span>(<span>target</span>) {
+    <span>target</span>.<span>health</span> <span>-=</span> <span>8</span>;
+  }
+}
+
+<span>class</span> <span>Zergling</span> {
+  <span>attack</span>(<span>target</span>) {
+    <span>target</span>.<span>health</span> <span>-=</span> <span>5</span>;
+  }
+}
+
+<span>class</span> <span>Mario</span> {
+  <span>jumpAttack</span>() {
+    <span>console</span>.<span>log</span>(<span>'Mamamia!'</span>);
+    <span>return</span> <span>3</span>;
+  }
+}
+</code></pre>
+            <p>Complete the code so that we can create a <code>MarioAdapter</code> that can attack as other units do.</p>
+            <p><strong>Note</strong> to calculate how much damage <code>mario</code> is going to do you have to call the <code>jumpAttack</code> method (<code>jump_attack</code> in Python).</p>
+        </div>
     </div>
 </div>
